@@ -11,9 +11,18 @@ body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(180d
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:420px;margin:26px auto}
 .thumb{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;cursor:pointer;border:3px solid transparent}
 .thumb:hover{border-color:#fff}
+button.logout{margin-top:20px;padding:8px 16px;border:none;border-radius:6px;background:#b00000;color:#fff;font-weight:700;cursor:pointer}
 </style>
 </head>
 <body>
+
+<script>
+// proteger acesso
+if(!localStorage.getItem('loggedUser')){
+  window.location.href = 'login.html';
+}
+</script>
+
 <div class="container">
   <div class="logo">RYANFLIX</div>
   <h3>Escolha seu personagem</h3>
@@ -25,15 +34,22 @@ body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(180d
     <img src="https://i.imgur.com/QOpl1hA.png" class="thumb" onclick="select(4)" alt="p4">
     <img src="https://i.imgur.com/JkavqJb.png" class="thumb" onclick="select(5)" alt="p5">
   </div>
+
+  <button class="logout" onclick="logout()">Sair</button>
 </div>
 
 <script>
 function select(i){
-  // salvar escolha simples e seguir para vídeo
   localStorage.setItem('personagem', i);
   window.location.href = 'video.html';
+}
+
+function logout(){
+  localStorage.removeItem('loggedUser');
+  window.location.href = 'login.html';
 }
 </script>
 </body>
 </html>
+
 
