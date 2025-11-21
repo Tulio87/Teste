@@ -20,7 +20,7 @@ button{width:100%;padding:12px;border-radius:6px;border:none;background:#b00000;
   <div class="logo">RYANFLIX</div>
   <div class="card">
     <h2>Entrar</h2>
-    <input id="user" placeholder="Email ou telefone" type="text" />
+    <input id="user" placeholder="Email" type="text" />
     <input id="pass" placeholder="Senha" type="password" />
     <button onclick="doLogin()">Entrar</button>
     <div class="note"><label><input type="checkbox" id="remember"> Lembre-me</label></div>
@@ -30,9 +30,38 @@ button{width:100%;padding:12px;border-radius:6px;border:none;background:#b00000;
 
 <script>
 function doLogin(){
-  // Simples navegação demo
+  const email = document.getElementById('user').value.trim();
+  const pass = document.getElementById('pass').value;
+  const remember = document.getElementById('remember').checked;
+
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+  const found = users.find(u => u.email === email && u.senha === pass);
+
+  if(!found){
+    alert("Email ou senha incorretos.");
+    return;
+  }
+
+  localStorage.setItem('loggedUser', email);
+
+  if(remember){
+    localStorage.setItem('rememberUser', email);
+  } else {
+    localStorage.removeItem('rememberUser');
+  }
+
   window.location.href = 'personagem.html';
+}
+
+window.onload = function(){
+  const remembered = localStorage.getItem('rememberUser');
+  if(remembered){
+    localStorage.setItem('loggedUser', remembered);
+    window.location.href = 'personagem.html';
+  }
 }
 </script>
 </body>
 </html>
+
