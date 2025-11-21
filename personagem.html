@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Escolha Personagem - RyanFlix</title>
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(180deg,#000,#8b0000);color:#fff}
+.container{min-height:100vh;padding:22px;text-align:center}
+.logo{font-weight:800;color:#e31818;font-size:28px;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:420px;margin:26px auto}
+.thumb{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:8px;cursor:pointer;border:3px solid transparent}
+.thumb:hover{border-color:#fff}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">RYANFLIX</div>
+  <h3>Escolha seu personagem</h3>
+
+  <div class="grid">
+    <img src="images/1.png" class="thumb" onclick="select(1)" alt="p1">
+    <img src="images/2.png" class="thumb" onclick="select(2)" alt="p2">
+    <img src="images/3.png" class="thumb" onclick="select(3)" alt="p3">
+    <img src="images/4.png" class="thumb" onclick="select(4)" alt="p4">
+    <img src="images/5.png" class="thumb" onclick="select(5)" alt="p5">
+  </div>
+</div>
+
+<script>
+function select(i){
+  // salvar escolha simples e seguir para vídeo
+  localStorage.setItem('personagem', i);
+  window.location.href = 'video.html';
+}
+</script>
+</body>
+</html>

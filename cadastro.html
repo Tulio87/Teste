@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Assinar - RyanFlix</title>
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(180deg,#000,#8b0000);color:#fff}
+.container{min-height:100vh;padding:22px;display:flex;flex-direction:column;align-items:center}
+.logo{font-weight:800;color:#e31818;font-size:28px;align-self:flex-start}
+.form{width:100%;max-width:420px;margin-top:30px}
+input{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #7a0a0a;background:transparent;color:#fff}
+button{width:100%;padding:12px;border-radius:6px;border:none;background:#b00000;color:#fff;font-weight:700;margin-top:12px}
+.success{display:none;color:#d4ffd6;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">RYANFLIX</div>
+  <div class="form">
+    <h2>Assinar</h2>
+    <input id="email" type="email" placeholder="Seu email" />
+    <button onclick="subscribe()">Assinar</button>
+    <p class="success" id="msg">Obrigado! Seu email foi cadastrado.</p>
+    <p style="margin-top:14px">Ou <a href="login.html" style="color:#ffdcdc">Entrar</a></p>
+  </div>
+</div>
+
+<script>
+function subscribe(){
+  var e = document.getElementById('email').value;
+  if(!e){ alert('Por favor digite um email válido'); return; }
+  // Aqui apenas demonstração: gravar no localStorage
+  var list = JSON.parse(localStorage.getItem('assinantes')||'[]');
+  list.push({email:e, date:new Date().toISOString()});
+  localStorage.setItem('assinantes', JSON.stringify(list));
+  document.getElementById('msg').style.display = 'block';
+  setTimeout(function(){ window.location.href='personagem.html'; }, 1200);
+}
+</script>
+</body>
+</html>

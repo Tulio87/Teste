@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Entrar - RyanFlix</title>
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif;background:linear-gradient(180deg,#000,#8b0000);color:#fff}
+.container{min-height:100vh;padding:22px}
+.logo{font-weight:800;color:#e31818;font-size:28px}
+.card{max-width:420px;margin:30px auto;padding:18px}
+input{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #7a0a0a;background:transparent;color:#fff}
+button{width:100%;padding:12px;border-radius:6px;border:none;background:#b00000;color:#fff;font-weight:700;margin-top:12px}
+.note{font-size:13px;color:#f0dede;margin-top:8px}
+@media(min-width:600px){.card{background:transparent}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">RYANFLIX</div>
+  <div class="card">
+    <h2>Entrar</h2>
+    <input id="user" placeholder="Email ou telefone" type="text" />
+    <input id="pass" placeholder="Senha" type="password" />
+    <button onclick="doLogin()">Entrar</button>
+    <div class="note"><label><input type="checkbox" id="remember"> Lembre-me</label></div>
+    <p style="margin-top:18px">Ainda não é assinante? <a href="cadastro.html" style="color:#ffdcdc">Assine</a></p>
+  </div>
+</div>
+
+<script>
+function doLogin(){
+  // Simples navegação demo
+  window.location.href = 'personagem.html';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RyanFlix</title>
+<style>
+:root{--red:#c00000;--dark:#0b0b0b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--dark);color:#fff}
+.container{min-height:100vh;display:flex;flex-direction:column;padding:22px;background:linear-gradient(180deg,#000 0%, #8b0000 100%)}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;color:#e31818;font-size:28px;letter-spacing:1px}
+.btn{background:var(--red);color:#fff;padding:10px 14px;border-radius:4px;text-decoration:none}
+.hero{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.hero h3{margin:0 0 20px;font-size:20px;line-height:1.2}
+.footer{padding:20px 0;text-align:center}
+@media(min-width:600px){
+  .container{max-width:420px;margin:24px auto;border:1px solid rgba(255,255,255,0.03);border-radius:4px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top">
+    <div class="logo">RYANFLIX</div>
+    <a class="btn" href="login.html">Entrar</a>
+  </div>
+
+  <div class="hero">
+    <h3>Todas as produções da<br>Golden Boy Studios<br>Em Um Só Lugar</h3>
+    <a class="btn" href="cadastro.html" style="width:220px;margin-top:30px">Assine</a>
+  </div>
+
+  <div class="footer">
+    <small>© RyanFlix</small>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vlog do Ryan - RyanFlix</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: linear-gradient(180deg, #000, #8b0000);
+    color: #fff;
+  }
+
+  .container {
+    min-height: 100vh;
+    padding: 22px;
+  }
+
+  .logo {
+    font-weight: 800;
+    color: #e31818;
+    font-size: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .video-wrap {
+    max-width: 720px;
+    margin: 30px auto 0;
+  }
+
+  iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 6px;
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 18px auto;
+    color: #f4f4f4;
+  }
+
+  @media(max-width: 420px) {
+    iframe {
+      height: 220px;
+    }
+  }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">RYANFLIX</div>
+    <div style="font-size: 18px;">Perfil</div>
+  </div>
+
+  <div class="video-wrap">
+    <!-- Embed do Dailymotion atualizado -->
+    <iframe 
+      frameborder="0"
+      type="text/html"
+      src="https://www.dailymotion.com/embed/video/x9u5puy"
+      allowfullscreen
+      allow="autoplay">
+    </iframe>
+  </div>
+
+  <div class="content">
+    <h2>Vlog do Ryan: Sem Censura</h2>
+    <p>No Vlog do Ryan Sem Censura, veja tudo sem cortes: episódios completos, bastidores e conteúdos exclusivos do site.</p>
+  </div>
+
+</div>
+</body>
+</html>
