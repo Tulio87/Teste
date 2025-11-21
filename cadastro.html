@@ -28,15 +28,39 @@ button{width:100%;padding:12px;border-radius:6px;border:none;background:#b00000;
 
 <script>
 function subscribe(){
-  var e = document.getElementById('email').value;
-  if(!e){ alert('Por favor digite um email válido'); return; }
-  // Aqui apenas demonstração: gravar no localStorage
-  var list = JSON.parse(localStorage.getItem('assinantes')||'[]');
-  list.push({email:e, date:new Date().toISOString()});
-  localStorage.setItem('assinantes', JSON.stringify(list));
+  const email = document.getElementById('email').value.trim();
+  const pass = prompt("Crie uma senha:");
+
+  if(!email || !email.includes("@")){
+    alert("Digite um email válido.");
+    return;
+  }
+  if(!pass){
+    alert("Senha inválida.");
+    return;
+  }
+
+  let users = JSON.parse(localStorage.getItem('users') || '[]');
+
+  // impedir cadastro duplicado
+  if(users.some(u => u.email === email)){
+    alert("Este email já está cadastrado!");
+    return;
+  }
+
+  users.push({
+    email: email,
+    senha: pass
+  });
+
+  localStorage.setItem('users', JSON.stringify(users));
+
   document.getElementById('msg').style.display = 'block';
-  setTimeout(function(){ window.location.href='personagem.html'; }, 1200);
+  setTimeout(() => {
+    window.location.href = 'login.html';
+  }, 1200);
 }
 </script>
 </body>
 </html>
+
